@@ -1,0 +1,256 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #2b2b45;
+    color: #f6b1df;
+    padding: 30px 15px 60px;
+    text-align: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px; 
+    background-color: #303057;                
+}
+.item {
+    width: 200px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1.0s ease-in-out;  
+}
+.item:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+.quadrado {
+    width: 100px;
+    height: 100px;
+    background: #ff6b6b;
+    transition: background 0.5s;
+}
+.quadrado:hover {
+    background: #419d4f;   
+}
+.retangulo {
+    width: 160px;
+    height: 90px;
+    background: #4ecdc4;
+}
+.circulo {
+    width: 100px;
+    height: 100px;
+    background: #ffe66d;
+    border-radius: 50%;
+    transition: background 0.5s;
+}
+.circulo:hover{
+    background-color: #be6a85;
+}
+.oval {
+    width: 160px;
+    height: 90px;
+    background: #a29bfe;
+    border-radius: 50%;
+}
+.triangulo-cima {
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 100px solid #55efc4;
+}
+.triangulo-baixo {
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-top: 100px solid #fa6a9c;
+}
+.trapezio {
+    width: 100px;
+    height: 0;
+    border-bottom: 80px solid #f88651;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+}
+.estrela {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 42px solid #f9ca24;
+    transform: rotate(35deg);
+    transition: border-bottom-color 0.5s;
+}
+.estrela::before {
+    content: "";
+    position: absolute;
+    top: -27px;
+    left: -39px;
+    width: 0;
+    height: 0;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-bottom: 48px solid #f9ca24;
+    transform: rotate(-35deg);
+    transition: border-bottom-color 0.5s;
+}
+.estrela::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: -63px;
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 42px solid #f9ca24;
+    transform: rotate(-70deg);
+    transition: border-bottom-color 0.5s;
+}
+.estrela:hover, .estrela:hover::before,
+.estrela:hover::after {
+    border-bottom-color: #b93e20;
+}
+.losango {
+    width: 90px;
+    height: 90px;
+    background: #0984e3;
+    transform: rotate(45deg);
+}
+.coracao {
+    position: relative;
+    width: 100px;
+    height: 90px;
+}
+.coracao::before, .coracao::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: #e84393;
+    border-radius: 50px 50px 0 0;
+}
+.coracao::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+.coracao::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+.emoji {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background: #ffd93d;
+    border-radius: 50%;
+    box-shadow: inset -8px -8px 0 rgba(0, 0, 0, 0.1);
+}
+.olho-esquerdo, .olho-direito {
+    position: absolute;
+    top: 30px;
+    width: 30px;
+    height: 27px;
+    animation: batida 1s ease-in-out infinite;
+}
+.olho-esquerdo { 
+    left: 22px; 
+}
+.olho-direito { 
+    right: 22px; 
+}
+.olho-esquerdo::before, .olho-esquerdo::after,
+.olho-direito::before, .olho-direito::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 15px;
+    height: 24px;
+    background: #e63946;
+    border-radius: 15px 15px 0 0;
+}
+.olho-esquerdo::before, .olho-direito::before {
+    left: 15px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+.olho-esquerdo::after, .olho-direito::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+.boca {
+    position: absolute;
+    bottom: 22px;
+    left: 25px;
+    width: 60px;
+    height: 32px;
+    border: 6px solid #2d3436;
+    border-top: none;
+    border-radius: 0 0 60px 60px;
+}
+@keyframes batida {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.25); }
+}
+.item-casa {
+    position: relative;
+    width: 240px;
+    height: 200px;
+}
+.casa {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    width: 160px;
+}
+.telhado {
+    width: 0;
+    height: 0;
+    margin-left: -20px;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid #c0392b;
+}
+.chamine {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 22px;
+    height: 45px;
+    background: #7f8c8d;
+}
+.parede {
+    position: relative;
+    width: 160px;
+    height: 100px;
+    background: #f5deb3;
+}
+.porta {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    width: 35px;
+    height: 60px;
+    background: #6d4c41;
+    border-radius: 6px 6px 0 0;
+}
+.janela {
+    position: absolute;
+    top: 20px;
+    right: 22px;
+    width: 40px;
+    height: 40px;
+    border: 4px solid #6d4c41;
+    background:
+        linear-gradient(#6d4c41, #6d4c41) center / 4px 100% no-repeat,
+        linear-gradient(#6d4c41, #6d4c41) center / 100% 4px no-repeat,
+        #74b9ff;
+}
